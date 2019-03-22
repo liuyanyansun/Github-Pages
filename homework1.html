@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业</title>
+    <style>
+        #in{
+            width: 195px;
+            height: 45px;
+            float:left;
+            border: 2px solid #fbc880;
+        }
+        #se{
+            width: 140px;
+            height: 35px;
+            border: 1px solid #9a9a9a;
+            margin-left:4px;
+            margin-top:10px;
+            background-color: #ececec;
+            color: #9a9a9a;
+        }
+        #fa{
+            background-color: #e0e0e0;
+            border: 1px solid #e0e0e0;
+            color:white;
+            font-size: 15px;
+            position: fixed;
+            left:370px;
+            top:130px;
+            display: none;
+        }
+        .big{
+            width:400px;
+            height:180px;
+        }
+        .sm{
+            width:345px;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <input type="text" name="store" placeholder="请输入想查找的商品" id="in">
+        <button id="se">搜索</button>
+        <p>最近搜索</p>
+        <div class="sm" id="al">
+        </div>
+        <button id="fa">×</button>
+    </div>
+</body>
+<script>
+    //输入框的id
+    var in1 = document.getElementById('in');
+    //搜索的id
+    var se1 = document.getElementById('se');
+    //获取所有
+    var all = document.getElementById('al');
+    //删除的id
+    var fa1 = document.getElementById('fa');
+
+    se1.onclick = function add(){
+        var date = new Date();
+        var time = date.toLocaleString();
+        var a1 = document.createElement('span');
+        a1.setAttribute("style","margin-left:10px;line-height:30px;background-color:#e0e0e0;");
+        a1.innerHTML =in1.value; 
+        all.appendChild(a1);
+        fa1.style.display = "block";
+        localStorage.setItem(time,in1.value);
+        in1.value = null;
+    }
+    fa1.onclick = function clear(){
+        if(window.confirm("是要全部清除吗?")){
+            localStorage.clear();
+            var arr =[];
+            var sp = document.getElementsByTagName('span');
+            for(var i=0;i<sp.length;i++){
+                arr.push(sp[i]);
+            }
+            for(var i=0;i<arr.length;i++){
+                arr[i].parentNode.removeChild(arr[i]);
+            }
+            fa1.style.display ="none";
+		}
+    }
+</script>
+</html>

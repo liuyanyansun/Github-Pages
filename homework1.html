@@ -42,12 +42,13 @@
 </head>
 <body>
     <div class="big">
-        <input type="text" name="store" placeholder="请输入想查找的商品" id="in">
+        <input type="search" name="store" placeholder="请输入想查找的商品" id="in">
         <button id="se">搜索</button>
         <p>最近搜索</p>
         <div class="sm" id="al">
         </div>
         <button id="fa">×</button>
+        <p style="display:block" id="re">无记录</p>
     </div>
 </body>
 <script>
@@ -59,7 +60,7 @@
     var all = document.getElementById('al');
     //删除的id
     var fa1 = document.getElementById('fa');
-
+    var re1 = document.getElementById('re');
     se1.onclick = function add(){
         var date = new Date();
         var time = date.toLocaleString();
@@ -68,6 +69,7 @@
         a1.innerHTML =in1.value; 
         all.appendChild(a1);
         fa1.style.display = "block";
+        re1.style.display = "none";
         localStorage.setItem(time,in1.value);
         in1.value = null;
     }
@@ -83,6 +85,7 @@
                 arr[i].parentNode.removeChild(arr[i]);
             }
             fa1.style.display ="none";
+            re1.style.display ="block";
 		}
     }
 </script>

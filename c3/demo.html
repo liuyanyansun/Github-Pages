@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:500px;
+            height: 650px;
+            border: 3px solid #e8e8e8;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+            position: relative;
+        }
+        .innerbox{
+            width: 500px;
+            height: 600px;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }
+        .second{
+            width:500px;
+            height: 328px;
+            overflow: hidden;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+            background: black;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            transition: transform 1s ease-in-out;
+            opacity: 0.5;
+            box-shadow: 10px 10px 50px 20px gray inset;
+        }
+        .third{
+            width: 500px;
+            overflow: hidden;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }      
+        h1{
+            margin-left:30px;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }
+        h2{
+            margin-left: 30px;
+            font-weight: normal;
+            color: #ea9b7c;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }
+        .p1{
+            margin-top:0px;
+            margin-left:30px;
+            font-weight: normal;
+            font-size: 23px;
+            color: gray;
+            display: none;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }
+        .p2{
+            position: absolute;
+            margin-left: 30px;
+            height: 600;
+            float: left;
+            color: gray;
+        }
+        .p3{
+            position: absolute;
+            margin-left: 120px;
+            height: 600;
+            float: left;
+            color: gray;
+        }
+        .circle{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top:35px;
+            left: 415px;
+            background:#fe7445;
+            border-radius: 50%;
+        }
+        .re{
+            position: absolute;
+            width: 70px;
+            height: 30px;
+            background:#fe7445;
+            top:300px;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+            border-top-right-radius: 4px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+        .box:hover{
+            border: 3px solid gray;
+        }
+        .innerbox:hover .second{
+            width: 500px;
+            height: 180px;
+        }
+        .innerbox:hover .second img{
+            transform: scale(1.5);
+            box-shadow: 0px 0px 10px url("jianqiao.jpg");
+            opacity:0.7; 
+        }
+        .innerbox:hover .third{
+            width:500px;
+            height: 390px;
+        }
+        .innerbox:hover .third .p1{
+            display: block;
+        }
+        .box:hover .re{
+            top:150px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="innerbox">
+            <div class="second">
+                <img src="zhanqiao.jpg">
+            </div>
+            <div class="third">
+                <h1>青岛栈桥</h1>
+                <h2>国家AAAA级旅游景区</h2>
+                <p class="p1">青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级风景名胜区。
+                青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。
+                桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛.</p>
+            </div>
+        </div>
+        <p class="p2">10分钟前</p>
+        <p class="p3">123评论</p>
+        <div class="circle">
+            <span style="color:white;">&nbsp&nbsp&nbsp15</span>
+            <span style="color: white;">&nbsp&nbsp五月</span>
+        </div>
+        <div class="re">
+            <span style="color: white;">&nbsp&nbsp&nbsp照片</span>
+        </div> 
+    </div>
+    
+</body>
+<script>
+</script>
+</html>
